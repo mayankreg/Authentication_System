@@ -1,7 +1,49 @@
-<h1>Sign In!</h1>
+<!-- <h1>Sign In!</h1>
 
 <form action="/users/create-session" method="POST">
     <input type="email" name="email" placeholder="Your Email" required>
     <input type="password" name="password" placeholder="Password" required>
     <input type="submit" value="Sign In">
 </form>
+
+<p>
+    <a href="/users/auth/google">Google Sign In/Sign Up</a>
+</p> -->
+
+<link rel="stylesheet" href="/css/sign_up.css">
+<section class="container forms">
+    <div class="form login">
+        <div class="form-content">
+            <header>Login</header>
+            <form action="/users/create-session" method="POST">
+                <div class="field input-field">
+                    <input type="email" name="email" placeholder="Email" class="input" required>
+                </div>
+    
+                <div class="field input-field">
+                    <input type="password" name="password" placeholder="Password" class="password" required>
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
+        
+                <div class="field button-field">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+    
+            <div class="form-link">
+                <span>Don't have an account? <a href="/users/sign-up" class="link signup-link">Signup</a></span>
+            </div>
+        </div>
+    
+        <div class="line"></div>
+        
+        <div class="media-options">
+            <a href="/users/auth/google" class="field google">
+                <img src="/images/google_login.jpg" alt="" class="google-img">
+                <span>Login with Google</span>
+            </a>
+        </div>
+    
+    </div>
+</section>
+<script src="/js/sign_In_Up.js"></script>

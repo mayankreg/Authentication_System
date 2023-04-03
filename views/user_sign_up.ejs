@@ -1,9 +1,112 @@
-<h1>Sign Up!</h1>
+<!-- <h1>Sign Up!</h1>
 
 <form action="/users/create" method="POST">
+    <label>name</label>
     <input type="text" name="name" placeholder="Your Name" required>
+    <label>email</label>
     <input type="email" name="email" placeholder="Your Email" required>
+    <label>password</label>
     <input type="password" name="password" placeholder="Password" required>
+    <label>confirm password</label>
     <input type="password" name="confirm_password" placeholder="Confirm Password" required>
     <input type="submit" value="Sign Up">
 </form>
+
+<p>
+    <a href="/users/auth/google">Google Sign In/Sign Up</a>
+</p> -->
+
+<link rel="stylesheet" href="/css/sign_up.css">
+<section class="container forms">
+    <!-- <div class="form login">
+        <div class="form-content">
+            <header>Login</header>
+            <form action="#">
+                <div class="field input-field">
+                    <input type="email" placeholder="Email" class="input">
+                </div>
+
+                <div class="field input-field">
+                    <input type="password" placeholder="Password" class="password">
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
+
+                <div class="form-link">
+                    <a href="#" class="forgot-pass">Forgot password?</a>
+                </div>
+
+                <div class="field button-field">
+                    <button>Login</button>
+                </div>
+            </form>
+
+            <div class="form-link">
+                <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
+            </div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="media-options">
+            <a href="#" class="field facebook">
+                <i class='bx bxl-facebook facebook-icon'></i>
+                <span>Login with Facebook</span>
+            </a>
+        </div>
+
+        <div class="media-options">
+            <a href="#" class="field google">
+                <img src="#" alt="" class="google-img">
+                <span>Login with Google</span>
+            </a>
+        </div>
+
+    </div> -->
+
+    <!-- Signup Form -->
+
+    <div class="form signup">
+        <div class="form-content">
+            <header id="form_header">Signup</header>
+            <form action="/users/create" method="POST">
+                <div class="field input-field">
+                    <input type="text" name="name" placeholder="Your Name" class="input" required>
+                </div>
+                
+                <div class="field input-field">
+                    <input type="email" name="email" placeholder="Email" class="input" required>
+                </div>
+
+                <div class="field input-field">
+                    <input type="password" name="password" placeholder="Create password" class="password" required>
+                </div>
+
+                <div class="field input-field">
+                    <input type="password" name="confirm_password" placeholder="Confirm password" class="password" required>
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
+
+                <div class="field button-field">
+                    <button type="submit">Signup</button>
+                    <!-- <input type="submit" value="Signup" style="background-color: #4070f4;"> -->
+                </div>
+            </form>
+
+            <div class="form-link">
+                <span>Already have an account? <a href="/users/sign-in" class="link login-link">Login</a></span>
+            </div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="media-options">
+            <a href="/users/auth/google" class="field google">
+                <img src="/images/google_login.jpg" alt="" class="google-img">
+                <span>Login with Google</span>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<script src="/js/sign_In_Up.js"></script>

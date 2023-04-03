@@ -1,9 +1,5 @@
 const mongoose = require('mongoose');
-const multer = require('multer');
-
-// define the path for avatars
-const path = require('path');
-const AVATAR_PATH = path.join('/uploads/users/avatars');
+const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema({
     email: {
@@ -20,29 +16,18 @@ const userSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-    }, 
-    avatar: {
-        type: String
-    }
-},
-{
+    },
+},{
     timestamps: true
 });
 
-// define the storage for avatars
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, path.join(__dirname, '..', AVATAR_PATH));
-    },
-    filename: function (req, file, cb) {
-      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-      cb(null, file.fieldname + '-' + uniqueSuffix)
-    }
-  });
-
-  // staic functions
-  userSchema.statics.uploadedAvatar = multer({ storage: storage }).single('avatar');
-  userSchema.statics.avatarPath = AVATAR_PATH;
+userSchema.statics.generateHash = function (password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(9));
+  };
+  
+userSchema.statics.validPassword = function (password, user) {
+    return bcrypt.compareSync(password, user);
+  };
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;
