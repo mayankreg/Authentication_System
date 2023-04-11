@@ -10,7 +10,7 @@
 6) google authentication
 
 #Tech Stack
-  HTML, CSS, Javascript, Node.js, MongoDB, Express.js, redis, nodemailer, passport
+  HTML, CSS, Javascript, Node.js, MongoDB, Express.js, redis, nodemailer, passport, EJS, Noty
   
 #How to Install Project
 1) Clone the project onto your local machine.
